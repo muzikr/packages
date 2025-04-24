@@ -1,14 +1,11 @@
---- a/setup.cfg
-+++ b/setup.cfg
-@@ -30,7 +30,10 @@ zip_safe = False
- 
- [options.packages.find]
- where = src
--exclude = exampleproj
-+exclude = 
-+	exampleproj
-+	*.tests
-+	*.tests.*
- 
- [options.package_data]
- incremental = py.typed
+--- a/MANIFEST.in
++++ b/MANIFEST.in
+@@ -13,7 +13,7 @@ prune src/incremental/newsfragments
+ global-exclude .coverage*
+ include .coveragerc
+
+-graft tests
++prune tests
+ prune tests/example_*/src/*.egg-info
+ prune tests/example_*/build
+ prune tests/example_*/dist
