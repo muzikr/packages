@@ -1,0 +1,25 @@
+From fc05fdc4bddf8e269b9b80b185722ccc1a2572fe Mon Sep 17 00:00:00 2001
+From: Richard Muzik <richard.muzik@nic.cz>
+Date: Thu, 10 Apr 2025 10:27:16 +0200
+Subject: [PATCH] Do not add tests to dist
+
+---
+ MANIFEST.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/MANIFEST.in b/MANIFEST.in
+index 6cfa7f3..d34b464 100644
+--- a/MANIFEST.in
++++ b/MANIFEST.in
+@@ -13,7 +13,7 @@ prune src/incremental/newsfragments
+ global-exclude .coverage*
+ include .coveragerc
+ 
+-graft tests
++prune tests
+ prune tests/example_*/src/*.egg-info
+ prune tests/example_*/build
+ prune tests/example_*/dist
+-- 
+2.49.0
+
